@@ -1,0 +1,16 @@
+<%# Host apps can override this view by placing their own at app/views/magic_link_auth/sessions/new.html.erb %>
+<h1>Sign in to <%= MagicLinkAuth.configuration.app_name %></h1>
+
+<% if flash[:alert] %>
+  <p style="color:red;"><%= flash[:alert] %></p>
+<% end %>
+
+<%= form_with url: magic_link_auth.session_path, method: :post do |f| %>
+  <div>
+    <%= f.label :email, "Email address" %>
+    <%= f.email_field :email, required: true, autofocus: true, autocomplete: "email", placeholder: "you@example.com" %>
+  </div>
+  <div>
+    <%= f.submit "Send sign-in link" %>
+  </div>
+<% end %>

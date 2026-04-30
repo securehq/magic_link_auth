@@ -1,0 +1,13 @@
+Hi <%= @user.email %>,
+
+Click the link below to sign in to <%= @app_name %>. This link is valid for 15 minutes and can only be used once.
+
+<%= @magic_link_url %>
+
+<% if @app_link_url %>
+On a mobile device? Open directly in the app:
+
+<%= @app_link_url %>
+<% end %>
+
+If you did not request this link, you can safely ignore this email.

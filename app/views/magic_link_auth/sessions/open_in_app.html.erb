@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Opening <%= MagicLinkAuth.configuration.app_name %>…</title>
+    <style>
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+        margin: 0;
+        background: #f9f9f9;
+        color: #111;
+      }
+      h1 { font-size: 1.25rem; font-weight: 600; margin-bottom: 0.5rem; }
+      p  { font-size: 0.9rem; color: #555; margin-bottom: 1.5rem; text-align: center; max-width: 320px; }
+      .btn {
+        display: inline-block;
+        padding: 0.75rem 2rem;
+        background: #111;
+        color: #fff;
+        border-radius: 8px;
+        text-decoration: none;
+        font-size: 0.95rem;
+        font-weight: 500;
+      }
+    </style>
+    <% if @app_deep_link %>
+      <script>
+        window.addEventListener("DOMContentLoaded", function() {
+          window.location.href = "<%= j @app_deep_link %>";
+        });
+      </script>
+    <% end %>
+  </head>
+  <body>
+    <% if @app_deep_link %>
+      <h1>Opening <%= MagicLinkAuth.configuration.app_name %>…</h1>
+      <p>You should be redirected to the app automatically. If nothing happens, tap the button below.</p>
+      <a href="<%= @app_deep_link %>" class="btn">Open in <%= MagicLinkAuth.configuration.app_name %></a>
+    <% else %>
+      <h1>Sign-in link verified</h1>
+      <p>Your sign-in link has been verified. You can close this page.</p>
+    <% end %>
+  </body>
+</html>

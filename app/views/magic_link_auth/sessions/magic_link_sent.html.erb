@@ -1,0 +1,11 @@
+<%# Host apps can override this view by placing their own at app/views/magic_link_auth/sessions/magic_link_sent.html.erb %>
+<h1>Check your inbox</h1>
+
+<p>
+  If an account exists for that email, we've sent a sign-in link.
+  It's valid for <strong>15 minutes</strong> and can only be used <strong>once</strong>.
+</p>
+
+<p>Can't find it? Try checking your spam or junk folder.</p>
+
+<%= link_to "Request a new link", magic_link_auth.new_session_path %>

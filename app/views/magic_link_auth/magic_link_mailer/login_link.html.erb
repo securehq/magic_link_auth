@@ -1,0 +1,15 @@
+<html>
+  <body>
+    <p>Hi <%= @user.email %>,</p>
+
+    <p>Click the link below to sign in to <%= @app_name %>. This link is valid for 15 minutes and can only be used once.</p>
+
+    <p><%= link_to "Sign in to #{@app_name}.", @magic_link_url %></p>
+
+    <% if @app_link_url %>
+      <p>On a mobile device? <%= link_to "Open directly in the app.", @app_link_url %></p>
+    <% end %>
+
+    <p>If you did not request this link, you can safely ignore this email.</p>
+  </body>
+</html>
