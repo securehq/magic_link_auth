@@ -11,7 +11,7 @@ Gem::Specification.new do |spec|
     Configurable user model, deep-link (Universal Links / Android App Links) support, and a
     single-use token denylist baked in.
   DESC
-  spec.homepage = "https://github.com/traindev/magic_link_auth"
+  spec.homepage = "https://github.com/securehq/magic_link_auth"
   spec.license = "MIT"
   spec.required_ruby_version = ">= 3.2.0"
 
