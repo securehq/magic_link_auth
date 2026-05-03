@@ -3,7 +3,7 @@ require_relative "lib/magic_link_auth/version"
 Gem::Specification.new do |spec|
   spec.name = "magic_link_auth"
   spec.version = MagicLinkAuth::VERSION
-  spec.authors = ["Melvin"]
+  spec.authors = [ "Melvin" ]
   spec.summary = "Mountable Rails engine providing passwordless magic-link authentication (web + API/JWT)."
   spec.description = <<~DESC
     Drop-in Rails engine that adds passwordless magic-link sign-in to any Rails application.
@@ -19,4 +19,5 @@ Gem::Specification.new do |spec|
 
   spec.add_dependency "rails", ">= 7.2"
   spec.add_dependency "jwt", "~> 3.1"
+  spec.add_development_dependency "rubocop-rails-omakase"
 end
