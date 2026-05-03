@@ -39,9 +39,11 @@ module MagicLinkAuth
       config = MagicLinkAuth.configuration
       if config.deep_link_enabled?
         @app_deep_link = "#{config.deep_link_scheme}://session/verify?token=#{token}"
+        render :open_in_app
+      else
+        redirect_to main_app.root_path, notice: "Sign-in successful."
       end
 
-      render :open_in_app
     end
 
     # GET /auth/session/magic_link_sent
