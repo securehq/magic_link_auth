@@ -41,7 +41,10 @@ module MagicLinkAuth
         @app_deep_link = "#{config.deep_link_scheme}://session/verify?token=#{token}"
         render :open_in_app
       else
-        redirect_to main_app.root_path, notice: "Sign-in successful."
+        user = MagicLinkAuth.user_class.find_by(id: claims["user_id"])
+        start_new_session_for(user)
+
+        redirect_to after_authentication_url, notice: "Sign-in successful."
       end
 
     end
