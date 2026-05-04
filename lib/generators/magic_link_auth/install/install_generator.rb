@@ -21,11 +21,11 @@ module MagicLinkAuth
 
       def copy_migrations
         migration_template(
-          "../../../../../../db/migrate/20260430000001_create_magic_link_auth_sessions.rb",
+          "../../../../../db/migrate/20260430000001_create_magic_link_auth_sessions.rb",
           "db/migrate/create_magic_link_auth_sessions.rb"
         )
         migration_template(
-          "../../../../../../db/migrate/20260430000002_create_magic_link_auth_token_denylists.rb",
+          "../../../../../db/migrate/20260430000002_create_magic_link_auth_token_denylists.rb",
           "db/migrate/create_magic_link_auth_token_denylists.rb"
         )
       end

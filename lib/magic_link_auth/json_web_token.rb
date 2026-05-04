@@ -1,3 +1,5 @@
+require "jwt"
+
 module MagicLinkAuth
   class JsonWebToken
     MAGIC_LINK_PURPOSE = "magic_link"
