@@ -60,7 +60,7 @@ User clicks link in email
 
 ```ruby
 # Gemfile
-gem "magic_link_auth", path: "path/to/magic_link_auth"
+gem "magic_link_auth", github: "securehq/magic_link_auth"
 # or, once published:
 gem "magic_link_auth"
 ```
