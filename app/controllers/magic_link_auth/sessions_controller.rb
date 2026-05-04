@@ -46,7 +46,6 @@ module MagicLinkAuth
 
         redirect_to after_authentication_url, notice: "Sign-in successful."
       end
-
     end
 
     # GET /auth/session/magic_link_sent
