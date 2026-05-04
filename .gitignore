@@ -8,3 +8,4 @@
 /tmp/
 Gemfile.lock
 log/test.log
+.DS_Store
